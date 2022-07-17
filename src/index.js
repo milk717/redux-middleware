@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import rootReducer from "./modules";
 import {Provider} from "react-redux";
 import {createStore, applyMiddleware} from "redux";
 import myLogger from './middlewares/myLogger';
+import logger from 'redux-logger';
 
-const store = createStore(rootReducer, applyMiddleware(myLogger));
+//미들웨어 여러개 적용 가능
+const store = createStore(rootReducer, applyMiddleware(logger));
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
