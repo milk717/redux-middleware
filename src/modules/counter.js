@@ -6,6 +6,14 @@ const DECREASE = "DECREASE";
 export const increase = () =>({type: INCREASE});
 export const decrease = () =>({type: DECREASE});
 
+//카운터 딜레이하기
+export const increaseAsync = () =>dispatch => {
+    setTimeout(() => dispatch(increase()),1000);
+};
+export const decreaseAsync = () =>dispatch => {
+    setTimeout(() => dispatch(decrease()),1000);
+};
+
 //초기 상태 설정
 const initialState = {
     number:0
