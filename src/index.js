@@ -11,7 +11,7 @@ import ReduxThunk from 'redux-thunk';
 
 //미들웨어 여러개 적용 가능
 const store = createStore(rootReducer, composeWithDevTools(
-    applyMiddleware(logger, ReduxThunk)
+    applyMiddleware(ReduxThunk,logger)
 ));
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
